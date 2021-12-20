@@ -7,7 +7,7 @@ import xlsxwriter
 #Google Sheet Automation:tting up the connection to Outlook
 outlook = client.Dispatch('Outlook.Application')
 namespace = outlook.GetNameSpace('MAPI')
-account = namespace.Folders['macquarie.instructions@legalstream.com.au']
+account = namespace.Folders[#Insert Inbox]
 inbox = account.Folders['Inbox']
 
 #Empty List to start storing subject line and time and date
@@ -17,7 +17,7 @@ dataList2 = []
 
 scope = ['https://www.googleapis.com/auth/spreadsheets,' 'https://www.googleapis.com/auth/drive.file',
          'https://www.googleapis.com/auth/drive']
-service_file = r'D:\Projects for SQL & Tableau\Python Project\cryptotracker-327411-b7e2a6da147f.json'
+service_file = #Insert JSON File here#
 gc = pygsheets.authorize(service_file=service_file)
 Worksheet = gc.open("Macquarie Doc Prep Pipeline")
 Status_Sheet = Worksheet.worksheet_by_title("Status")
